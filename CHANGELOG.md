@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.6] - 2026-02-16
+
+### Added
+- **Ultimate Documentation Overhaul**: Completely rewritten README with a high-end visual showcase.
+- **Visual Previews**: Added 13 auto-playing GIFs showcasing every `NavBarStyle`.
+- **Style Guides**: Added specific code examples for all 13 styles.
+- **Customization Reference**: Detailed documentation for all "Uber" tuning parameters.
+
 ## [0.0.5] - 2026-02-16
 
 ### Added
