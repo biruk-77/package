@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.2] - 2026-02-16
+
+### Improved
+- Comprehensive README with detailed descriptions for all 13 styles
+- Full API reference documentation
+- Custom icon and label usage examples
+- Video demo
+
 ## [0.0.1] - 2026-02-16
 
 ### Added
