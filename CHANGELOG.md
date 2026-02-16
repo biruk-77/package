@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.5] - 2026-02-16
+
+### Added
+- Added `iconLabelSpacing` parameter to `FuturisticNavBar` to allow custom spacing between icons and labels.
+- Integrated Item Spacing slider in the example app's customization panel.
+
 ## [0.0.4] - 2026-02-16
 
 ### Improved

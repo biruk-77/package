@@ -43,6 +43,7 @@ class FuturisticNavBar extends StatefulWidget {
   final double borderWidth;
   final double blurSigma;
   final bool enableMotionBlur;
+  final double iconLabelSpacing;
 
   const FuturisticNavBar({
     super.key,
@@ -63,6 +64,7 @@ class FuturisticNavBar extends StatefulWidget {
     this.borderWidth = 1.5,
     this.blurSigma = 10.0,
     this.enableMotionBlur = false,
+    this.iconLabelSpacing = 4.0,
   });
 
   @override
@@ -463,8 +465,9 @@ class _FuturisticNavBarState extends State<FuturisticNavBar>
                     onHorizontalDragUpdate: _onHorizontalDragUpdate,
                     onHorizontalDragEnd: _onHorizontalDragEnd,
                     behavior: HitTestBehavior.opaque,
-                    child: Stack(
-                      alignment: Alignment.center,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         TweenAnimationBuilder<double>(
                           duration: Duration(
@@ -558,15 +561,13 @@ class _FuturisticNavBarState extends State<FuturisticNavBar>
                             );
                           },
                         ),
-                        if (isActive)
-                          Positioned(
-                            bottom: 8,
-                            child: Material(
-                              type: MaterialType.transparency,
-                              child:
-                                  _buildLabelWidget(item) ?? const SizedBox(),
-                            ),
+                        if (isActive) ...[
+                          SizedBox(height: widget.iconLabelSpacing),
+                          Material(
+                            type: MaterialType.transparency,
+                            child: _buildLabelWidget(item) ?? const SizedBox(),
                           ),
+                        ],
                       ],
                     ),
                   ),

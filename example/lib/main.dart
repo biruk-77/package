@@ -41,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
   double _glowStrength = 1.0;
   double _borderWidth = 1.5;
   double _blurSigma = 10.0;
+  double _iconLabelSpacing = 4.0;
 
   @override
   Widget build(BuildContext context) {
@@ -169,6 +170,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     (v) => setState(() => _blurSigma = v),
                     max: 30,
                   ),
+                  _buildSlider(
+                    'Item Spacing',
+                    _iconLabelSpacing,
+                    (v) => setState(() => _iconLabelSpacing = v),
+                    max: 20,
+                  ),
 
                   const SizedBox(height: 20),
                   _buildSectionTitle('INTERACTION ENGINE'),
@@ -241,6 +248,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 glowStrength: _glowStrength,
                 borderWidth: _borderWidth,
                 blurSigma: _blurSigma,
+                iconLabelSpacing: _iconLabelSpacing,
                 items: [
                   NavBarItem(icon: Icons.grid_view_rounded, label: 'HUB'),
                   NavBarItem(icon: Icons.bolt, label: 'CORE'),
