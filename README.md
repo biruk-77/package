@@ -40,6 +40,27 @@ Our vision is to provide developers with a tool that transcends standard Materia
 
 ---
 
+---
+
+## 🏆 Master Visual Showcase: The Crown Jewel
+Here is the **Synapse** style in its full glory. This represents the peak of our rendering engine—a neural network that reacts to your presence.
+
+![Synapse Master](https://raw.githubusercontent.com/biruk-77/package/main/Synapse.gif)
+
+### 🧩 Most Coolest Exam Code (Copy & Paste)
+```dart
+FuturisticNavBar(
+  selectedIndex: _index,
+  onItemSelected: (i) => setState(() => _index = i),
+  style: NavBarStyle.synapse, // The neural grid
+  theme: FuturisticTheme.cyberpunk(), // Neon glow
+  iconAnimationType: IconAnimationType.magnetic, // High-tension pull
+  showGlow: true, // Enable spark-pulse on tap
+)
+```
+
+---
+
 ## 🏁 Getting Started
 
 ### Installation
@@ -48,7 +69,7 @@ Add `nav_bar` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  nav_bar: ^0.0.7
+  nav_bar: ^0.0.9
 ```
 
 Then, run:
@@ -130,6 +151,34 @@ Chromatic aberration and crystalline refraction.
 ### 6. Hologram
 Digitized scanlines and flickering projections.
 ![Hologram Demo](https://raw.githubusercontent.com/biruk-77/package/main/Hologram.gif)
+
+### 7. Chronos
+Time-warping motion trails and mechanical ticks.
+![Chronos Demo](https://raw.githubusercontent.com/biruk-77/package/main/Chronos.gif)
+
+### 8. Synapse
+Neural network connections that spark on interaction.
+![Synapse Demo](https://raw.githubusercontent.com/biruk-77/package/main/Synapse.gif)
+
+### 9. Monolith
+Brutalist geometric shifts with deep shadows.
+![Monolith Demo](https://raw.githubusercontent.com/biruk-77/package/main/Monolith.gif)
+
+### 10. Singularity
+A gravity-well effect that bends space and light.
+![Singularity Demo](https://raw.githubusercontent.com/biruk-77/package/main/Singularity.gif)
+
+### 11. Sumi
+Japanese ink-wash aesthetics with organic bleed.
+![Sumi Demo](https://raw.githubusercontent.com/biruk-77/package/main/Sumi.gif)
+
+### 12. Cosmos
+Deep space parallax starfields and nebula glows.
+![Cosmos Demo](https://raw.githubusercontent.com/biruk-77/package/main/Cosmos.gif)
+
+### 13. Kinetic
+Force-based physics where tiles react to speed.
+![Kinetic Demo](https://raw.githubusercontent.com/biruk-77/package/main/Kinetic.gif)
 
 ---
 

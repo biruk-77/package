@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.9] - 2026-02-16
+
+### Added
+- **Master Visual Showcase**: Featured high-end demo section in README.
+- **Full Style Gallery**: Added GIFs for all 13 rendering styles.
+- **Elite Integration Snippets**: Copy-pasteable "Most Coolest" code examples for the flagship styles.
+
 ## [0.0.8] - 2026-02-16
 
 ### Added
