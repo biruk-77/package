@@ -1,0 +1,16 @@
+video.mp4
+example/
+test/
+android/
+ios/
+linux/
+macos/
+windows/
+.github/
+.idea/
+.vscode/
+.dart_tool/
+.metadata/
+.packages
+pubspec.lock
+build/
