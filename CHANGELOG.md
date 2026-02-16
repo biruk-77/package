@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.8] - 2026-02-16
+
+### Added
+- **Precision Engine Documentation**: Dedicated guide for Design Systems, Parameters, and Interaction Toggles.
+- **Customization Manual**: Detailed breakdown of `glowStrength`, `borderWidth`, `blurSigma`, and `iconLabelSpacing`.
+- **Logic Guides**: Added documentation for `Glow Aura` and `Surface Deformation` behavioral toggles.
+
 ## [0.0.7] - 2026-02-16
 
 ### Added

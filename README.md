@@ -133,6 +133,60 @@ Digitized scanlines and flickering projections.
 
 ---
 
+## 🎛️ The Precision Customization Engine
+
+The `nav_bar` package provides a dedicated **Precision Engine** for real-time visual tuning. This allows developers to create a unique "soul" for their application's navigation.
+
+### 🎨 1. Design System Presets
+We ship with three high-end collections that serve as the foundation for your design.
+
+*   **Cyberpunk**: The flagship aesthetic. High-contrast neon cyan, deep purples, and grid-based geometry.
+*   **Aurora**: Inspired by the arctic sky. Soft pastel gradients (Cyan, Pink, Gold) with low-contrast borders.
+*   **Molten**: Fierce volcanic energy. Deep reds, oranges, and heavy structural shadows.
+
+```dart
+FuturisticNavBar(
+  theme: FuturisticTheme.aurora(), // Instant Arctic vibes
+  // ...
+)
+```
+
+### 📏 2. Precision Parameters
+Fine-tune the mathematical physics of the rendering engine.
+
+| Parameter | Type | Default | Impact Description |
+|-----------|------|---------|---------------------|
+| `glowStrength` | `double` | `1.0` | Multiplies the light-leak and ambient aura brightness. |
+| `borderWidth` | `double` | `1.5` | Sets the architectural thickness of the bar frame. |
+| `blurSigma` | `double` | `10.0` | Gaussian density for glassmorphism styles (Obsidian). |
+| `iconLabelSpacing` | `double` | `4.0` | The vertical layout "gutter" between icon and text. |
+
+### ⚡ 3. Interaction Engine Toggles
+Control how the bar reacts to the user's touch.
+
+*   **Glow Aura (`showGlow`)**: When enabled, every tap generates a radial light pulse that propagates from the touch point.
+*   **Surface Deformation (`showLiquid`)**: Specifically for the **Liquid** style. Toggles the "surface tension" bridge between icons.
+
+```dart
+FuturisticNavBar(
+  showGlow: true,         // Enable Neon Pulse
+  showLiquid: true,       // Enable Gooey Physics
+  glowStrength: 2.0,      // double the light intensity
+)
+```
+
+### 🎭 4. Animation Collective
+Choose how the inactive icons "wake up" when selected.
+
+*   **SLIDE**: Moves the icon 20px upward in a high-speed vector travel.
+*   **SCALE**: Smoothly enlarges the icon by 25% with an elastic overshoot.
+*   **ROTATE**: A full 360-degree technical spin.
+*   **FLIP**: A 3D Y-Axis card flip.
+*   **BOUNCE**: Physics-based sinusoidal vertical oscillation.
+*   **MAGNETIC**: A high-tension pull effect that centers the icon.
+
+---
+
 ## 🔬 The Style Deep Dive Series: Technical Implementation
 
 This section explores the mathematical and logic-driven architecture of each style.
