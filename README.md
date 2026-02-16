@@ -10,7 +10,9 @@ A **premium Flutter navigation bar** with 13 stunning hand-crafted styles, physi
 
 ## 📱 Demo
 
-https://github.com/biruk-77/package/releases/download/v0.0.2/video.mp4
+[![Watch the Demo](https://raw.githubusercontent.com/biruk-77/package/main/demo_preview.png)](https://github.com/biruk-77/package/releases/download/v0.0.2/video.mp4)
+
+> Click the image above to watch the interactive demo video! 🎬
 
 ---
 

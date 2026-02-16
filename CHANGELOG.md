@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.4] - 2026-02-16
+
+### Improved
+- Replaced text link in README with a clickable Demo preview image for a better visual experience on pub.dev.
+
 ## [0.0.3] - 2026-02-16
 
 ### Fixed
