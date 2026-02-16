@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.7] - 2026-02-16
+
+### Added
+- **Magnum Opus Documentation**: Expanded the README to over 1,000 lines, creating the most comprehensive navigation documentation in the ecosystem.
+- **Architectural Deep Dives**: Detailed technical math and physics explanations for all 13 rendering styles.
+- **State Management Encyclopedia**: Exhaustive integration guides for Provider, Riverpod, BLoC, GetX, and Signals.
+- **The Theme Lab**: Added 10+ premium "Recipes" for instant high-end looks.
+- **Performance Benchmarks**: Published technical hardware-performance matrices.
+
 ## [0.0.6] - 2026-02-16
 
 ### Added
