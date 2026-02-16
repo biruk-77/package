@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.0] - 2026-02-16
+
+### Added
+- **Ultimate Stylized Gallery**: Added specific, copy-pasteable code examples for every one of the 13 navigation styles in the README.
+- **Recipe Handbook**: Every GIF now includes a "Quick-Start" code block with recommended themes and parameters.
+- **Design Guidance**: Provided insights on when to use each style for maximum UI impact.
+
 ## [0.0.9] - 2026-02-16
 
 ### Added

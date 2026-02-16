@@ -69,7 +69,7 @@ Add `nav_bar` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  nav_bar: ^0.0.9
+  nav_bar: ^0.1.0
 ```
 
 Then, run:
@@ -132,53 +132,163 @@ We don't just move items from A to B. We use **Lerp (Linear Interpolation)** and
 Organic, flowing metal fluid with gooey physics.
 ![Liquid Demo](https://raw.githubusercontent.com/biruk-77/package/main/Liquid.gif)
 
+```dart
+// The "Gooey" setup
+FuturisticNavBar(
+  style: NavBarStyle.liquid,
+  showLiquid: true, // Required for the bridge effect
+  theme: FuturisticTheme.cyberpunk(),
+)
+```
+
 ### 2. Floating
 A gravity-defying elevated pill with magnetic attraction.
 ![Floating Demo](https://raw.githubusercontent.com/biruk-77/package/main/Floating.gif)
+
+```dart
+// The "Detached" setup
+FuturisticNavBar(
+  style: NavBarStyle.floating,
+  glowStrength: 1.5,
+  theme: FuturisticTheme.aurora(),
+)
+```
 
 ### 3. Obsidian
 Ultra-premium matte design with real-time blur.
 ![Obsidian Demo](https://raw.githubusercontent.com/biruk-77/package/main/Obsidian.gif)
 
+```dart
+// The "Glassmorphism" setup
+FuturisticNavBar(
+  style: NavBarStyle.obsidian,
+  blurSigma: 15.0, // High-precision blur
+  theme: FuturisticTheme.molten(),
+)
+```
+
 ### 4. Quantum
 Particle-based energy trails and atomic dynamics.
 ![Quantum Demo](https://raw.githubusercontent.com/biruk-77/package/main/Quantum.gif)
+
+```dart
+// The "Subatomic" setup
+FuturisticNavBar(
+  style: NavBarStyle.quantum,
+  iconAnimationType: IconAnimationType.scale,
+)
+```
 
 ### 5. Prism
 Chromatic aberration and crystalline refraction.
 ![Prism Demo](https://raw.githubusercontent.com/biruk-77/package/main/Prism.gif)
 
+```dart
+// The "Glitch" setup
+FuturisticNavBar(
+  style: NavBarStyle.prism,
+  iconAnimationType: IconAnimationType.flip,
+)
+```
+
 ### 6. Hologram
 Digitized scanlines and flickering projections.
 ![Hologram Demo](https://raw.githubusercontent.com/biruk-77/package/main/Hologram.gif)
+
+```dart
+// The "Sci-Fi" setup
+FuturisticNavBar(
+  style: NavBarStyle.hologram,
+  showGlow: true, // Syncs flicker with glow pulses
+)
+```
 
 ### 7. Chronos
 Time-warping motion trails and mechanical ticks.
 ![Chronos Demo](https://raw.githubusercontent.com/biruk-77/package/main/Chronos.gif)
 
+```dart
+// The "Clockwork" setup
+FuturisticNavBar(
+  style: NavBarStyle.chronos,
+  animationDuration: Duration(milliseconds: 300), // Sharp transitions
+)
+```
+
 ### 8. Synapse
 Neural network connections that spark on interaction.
 ![Synapse Demo](https://raw.githubusercontent.com/biruk-77/package/main/Synapse.gif)
+
+```dart
+// The "Neural" setup (Flagsip)
+FuturisticNavBar(
+  style: NavBarStyle.synapse,
+  theme: FuturisticTheme.cyberpunk(),
+  showGlow: true,
+  iconAnimationType: IconAnimationType.magnetic,
+)
+```
 
 ### 9. Monolith
 Brutalist geometric shifts with deep shadows.
 ![Monolith Demo](https://raw.githubusercontent.com/biruk-77/package/main/Monolith.gif)
 
+```dart
+// The "Solid" setup
+FuturisticNavBar(
+  style: NavBarStyle.monolith,
+  borderWidth: 3.0, // Heavy structural frame
+  theme: FuturisticTheme.molten(),
+)
+```
+
 ### 10. Singularity
 A gravity-well effect that bends space and light.
 ![Singularity Demo](https://raw.githubusercontent.com/biruk-77/package/main/Singularity.gif)
+
+```dart
+// The "Gravity" setup
+FuturisticNavBar(
+  style: NavBarStyle.singularity,
+  glowStrength: 2.0,
+)
+```
 
 ### 11. Sumi
 Japanese ink-wash aesthetics with organic bleed.
 ![Sumi Demo](https://raw.githubusercontent.com/biruk-77/package/main/Sumi.gif)
 
+```dart
+// The "Artisan" setup
+FuturisticNavBar(
+  style: NavBarStyle.sumi,
+  iconAnimationType: IconAnimationType.bounce,
+)
+```
+
 ### 12. Cosmos
 Deep space parallax starfields and nebula glows.
 ![Cosmos Demo](https://raw.githubusercontent.com/biruk-77/package/main/Cosmos.gif)
 
+```dart
+// The "Galactic" setup
+FuturisticNavBar(
+  style: NavBarStyle.cosmos,
+  theme: FuturisticTheme.aurora(),
+)
+```
+
 ### 13. Kinetic
 Force-based physics where tiles react to speed.
 ![Kinetic Demo](https://raw.githubusercontent.com/biruk-77/package/main/Kinetic.gif)
+
+```dart
+// The "Momentum" setup
+FuturisticNavBar(
+  style: NavBarStyle.kinetic,
+  iconAnimationType: IconAnimationType.slide,
+)
+```
 
 ---
 
