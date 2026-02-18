@@ -37,8 +37,8 @@ class SynapsePainter extends CustomPainter {
     if (pressValue > 0.01 && (effectToggles['showImpact'] ?? true)) {
       final burstColor = customColors['burstColor'] ?? theme.accentColor;
       final burstPaint = Paint()
-        ..color = burstColor.withOpacity(
-          (0.4 * (1.0 - pressValue)).clamp(0.0, 1.0),
+        ..color = burstColor.withValues(
+          alpha: (0.4 * (1.0 - pressValue)).clamp(0.0, 1.0),
         )
         ..strokeWidth = 2.0
         ..style = PaintingStyle.stroke
@@ -49,8 +49,8 @@ class SynapsePainter extends CustomPainter {
 
       // Electrical Spikes
       final spikePaint = Paint()
-        ..color = (customColors['spikeColor'] ?? Colors.white).withOpacity(
-          (0.6 * (1.0 - pressValue)).clamp(0.0, 1.0),
+        ..color = (customColors['spikeColor'] ?? Colors.white).withValues(
+          alpha: (0.6 * (1.0 - pressValue)).clamp(0.0, 1.0),
         )
         ..strokeWidth = 1.0;
 
@@ -108,7 +108,7 @@ class SynapsePainter extends CustomPainter {
         path,
         Paint()
           ..color = (customColors['glitchColor'] ?? theme.accentColor)
-              .withOpacity((0.4 * pressValue).clamp(0.0, 1.0))
+              .withValues(alpha: (0.4 * pressValue).clamp(0.0, 1.0))
           ..style = PaintingStyle.stroke
           ..strokeWidth = 1.2,
       );
@@ -118,7 +118,7 @@ class SynapsePainter extends CustomPainter {
     if (effectToggles['showFilaments'] ?? true) {
       final filamentPaint = Paint()
         ..color = (customColors['filamentColor'] ?? theme.accentColor)
-            .withOpacity(0.05)
+            .withValues(alpha: 0.05)
         ..strokeWidth = 1.0
         ..style = PaintingStyle.stroke;
 
@@ -148,7 +148,8 @@ class SynapsePainter extends CustomPainter {
         canvas.drawCircle(
           Offset(nodeX, h / 2),
           4 + 2 * activation,
-          Paint()..color = baseNodeColor.withOpacity(0.1 + 0.4 * activation),
+          Paint()
+            ..color = baseNodeColor.withValues(alpha: 0.1 + 0.4 * activation),
         );
 
         if (activation > 0.1) {
@@ -156,7 +157,7 @@ class SynapsePainter extends CustomPainter {
             ..shader = ui.Gradient.linear(
               Offset(activeX, h / 2),
               Offset(nodeX, h / 2),
-              [activeNodeColor, activeNodeColor.withOpacity(0.0)],
+              [activeNodeColor, activeNodeColor.withValues(alpha: 0.0)],
             )
             ..strokeWidth = 1.5 * activation;
           canvas.drawLine(
@@ -176,8 +177,8 @@ class SynapsePainter extends CustomPainter {
         25 * pulse,
         Paint()
           ..shader = ui.Gradient.radial(Offset(activeX, h / 2), 40 * pulse, [
-            (customColors['nucleusColor'] ?? theme.accentColor).withOpacity(
-              0.15,
+            (customColors['nucleusColor'] ?? theme.accentColor).withValues(
+              alpha: 0.15,
             ),
             Colors.transparent,
           ])
@@ -195,7 +196,7 @@ class SynapsePainter extends CustomPainter {
           1,
           Paint()
             ..color = (customColors['floatingNodeColor'] ?? Colors.white)
-                .withOpacity(0.2)
+                .withValues(alpha: 0.2)
             ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 1),
         );
       }

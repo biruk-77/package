@@ -55,7 +55,7 @@ class PrismPainter extends CustomPainter {
       canvas.drawRRect(
         shockRRect,
         Paint()
-          ..color = redShiftColor.withOpacity(waveAlpha)
+          ..color = redShiftColor.withValues(alpha: waveAlpha)
           ..style = PaintingStyle.stroke
           ..strokeWidth = 1.5,
       );
@@ -63,7 +63,7 @@ class PrismPainter extends CustomPainter {
       canvas.drawRRect(
         shockRRect.shift(const Offset(2, 0)),
         Paint()
-          ..color = greenShiftColor.withOpacity(waveAlpha)
+          ..color = greenShiftColor.withValues(alpha: waveAlpha)
           ..style = PaintingStyle.stroke
           ..strokeWidth = 1.5,
       );
@@ -71,7 +71,7 @@ class PrismPainter extends CustomPainter {
       canvas.drawRRect(
         shockRRect.shift(const Offset(-2, 0)),
         Paint()
-          ..color = blueShiftColor.withOpacity(waveAlpha)
+          ..color = blueShiftColor.withValues(alpha: waveAlpha)
           ..style = PaintingStyle.stroke
           ..strokeWidth = 1.5,
       );
@@ -88,7 +88,9 @@ class PrismPainter extends CustomPainter {
     canvas.drawRRect(
       barRect,
       Paint()
-        ..color = (customColors['baseColor'] ?? Colors.white).withOpacity(0.05),
+        ..color = (customColors['baseColor'] ?? Colors.white).withValues(
+          alpha: 0.05,
+        ),
     );
 
     // 2. CHROMATIC DISPERSION (Rainbow edges)
@@ -103,12 +105,12 @@ class PrismPainter extends CustomPainter {
         Paint()
           ..style = PaintingStyle.stroke
           ..strokeWidth = 2.0
-          ..color = cyanColor.withOpacity(0.3)
+          ..color = cyanColor.withValues(alpha: 0.3)
           ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 3)
           ..shader = LinearGradient(
             colors: [
               Colors.transparent,
-              cyanColor.withOpacity(0.5),
+              cyanColor.withValues(alpha: 0.5),
               Colors.transparent,
             ],
             stops: [0.0, 0.5, 1.0],
@@ -123,7 +125,7 @@ class PrismPainter extends CustomPainter {
         Paint()
           ..style = PaintingStyle.stroke
           ..strokeWidth = 2.0
-          ..color = magentaColor.withOpacity(0.3)
+          ..color = magentaColor.withValues(alpha: 0.3)
           ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 5),
       );
     }
@@ -132,7 +134,7 @@ class PrismPainter extends CustomPainter {
     if (effectToggles['showGlow'] ?? true) {
       final rayColor = customColors['rayColor'] ?? Colors.white;
       final rayPaint = Paint()
-        ..color = rayColor.withOpacity(0.2)
+        ..color = rayColor.withValues(alpha: 0.2)
         ..strokeWidth = 1.0;
 
       final Offset center = Offset(activeX, h / 2);
@@ -152,7 +154,7 @@ class PrismPainter extends CustomPainter {
     if (effectToggles['showHighlights'] ?? true) {
       final highlightColor = customColors['highlightColor'] ?? Colors.white;
       final facetPaint = Paint()
-        ..color = highlightColor.withOpacity(0.4)
+        ..color = highlightColor.withValues(alpha: 0.4)
         ..strokeWidth = 1.5;
       canvas.drawLine(
         Offset(activeX - 25, 5),

@@ -237,7 +237,10 @@ class _FuturisticNavBarState extends State<FuturisticNavBar>
               fontWeight: FontWeight.bold,
               letterSpacing: 1,
               shadows: [
-                Shadow(color: Colors.black.withOpacity(0.8), blurRadius: 4),
+                Shadow(
+                  color: Colors.black.withValues(alpha: 0.8),
+                  blurRadius: 4,
+                ),
               ],
             ),
       );
@@ -481,31 +484,76 @@ class _FuturisticNavBarState extends State<FuturisticNavBar>
                             Matrix4 transform = Matrix4.identity();
                             switch (widget.iconAnimationType) {
                               case IconAnimationType.scale:
-                                transform.scale(1.0 + 0.2 * activeVal);
-                                transform.translate(0.0, -14.0 * activeVal);
+                                transform.scaleByDouble(
+                                  1.2 * activeVal + 1.0,
+                                  1.2 * activeVal + 1.0,
+                                  1.0,
+                                  1.0,
+                                );
+                                transform.translateByDouble(
+                                  0.0,
+                                  -14.0 * activeVal,
+                                  0.0,
+                                  1.0,
+                                );
                                 break;
                               case IconAnimationType.rotate:
                                 transform.rotateZ(activeVal * math.pi * 2);
-                                transform.translate(0.0, -10.0 * activeVal);
+                                transform.translateByDouble(
+                                  0.0,
+                                  -10.0 * activeVal,
+                                  0.0,
+                                  1.0,
+                                );
                                 break;
                               case IconAnimationType.slide:
-                                transform.translate(0.0, -20.0 * activeVal);
+                                transform.translateByDouble(
+                                  0.0,
+                                  -20.0 * activeVal,
+                                  0.0,
+                                  1.0,
+                                );
                                 break;
                               case IconAnimationType.fade:
-                                transform.translate(0.0, -10.0 * activeVal);
+                                transform.translateByDouble(
+                                  0.0,
+                                  -10.0 * activeVal,
+                                  0.0,
+                                  1.0,
+                                );
                                 break;
                               case IconAnimationType.flip:
                                 transform.rotateY(activeVal * math.pi);
-                                transform.translate(0.0, -14.0 * activeVal);
+                                transform.translateByDouble(
+                                  0.0,
+                                  -14.0 * activeVal,
+                                  0.0,
+                                  1.0,
+                                );
                                 break;
                               case IconAnimationType.bounce:
                                 final bounceY =
                                     math.sin(activeVal * math.pi) * -30.0;
-                                transform.translate(0.0, bounceY);
+                                transform.translateByDouble(
+                                  0.0,
+                                  bounceY,
+                                  0.0,
+                                  1.0,
+                                );
                                 break;
                               case IconAnimationType.magnetic:
-                                transform.scale(1.0 + 0.3 * activeVal);
-                                transform.translate(0.0, -18.0 * activeVal);
+                                transform.scaleByDouble(
+                                  1.3 * activeVal + 1.0,
+                                  1.3 * activeVal + 1.0,
+                                  1.0,
+                                  1.0,
+                                );
+                                transform.translateByDouble(
+                                  0.0,
+                                  -18.0 * activeVal,
+                                  0.0,
+                                  1.0,
+                                );
                                 break;
                             }
                             final bool isPrism =
@@ -532,8 +580,8 @@ class _FuturisticNavBarState extends State<FuturisticNavBar>
                                     offset: Offset(-2 * activeVal, 0),
                                     child: Icon(
                                       item.icon,
-                                      color: Colors.cyan.withOpacity(
-                                        0.3 * activeVal,
+                                      color: Colors.cyan.withValues(
+                                        alpha: 0.3 * activeVal,
                                       ),
                                       size: widget.iconSize + (6 * activeVal),
                                     ),
@@ -543,8 +591,8 @@ class _FuturisticNavBarState extends State<FuturisticNavBar>
                                     offset: Offset(2 * activeVal, 0),
                                     child: Icon(
                                       item.icon,
-                                      color: Colors.purpleAccent.withOpacity(
-                                        0.3 * activeVal,
+                                      color: Colors.purpleAccent.withValues(
+                                        alpha: 0.3 * activeVal,
                                       ),
                                       size: widget.iconSize + (6 * activeVal),
                                     ),

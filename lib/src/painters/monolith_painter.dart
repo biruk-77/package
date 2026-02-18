@@ -43,8 +43,8 @@ class MonolithPainter extends CustomPainter {
             Offset(activeX, h / 2),
             auraRadius,
             [
-              theme.accentColor.withOpacity(
-                (0.2 * (1.0 - pressValue)).clamp(0.0, 1.0),
+              theme.accentColor.withValues(
+                alpha: (0.2 * (1.0 - pressValue)).clamp(0.0, 1.0),
               ),
               Colors.transparent,
             ],
@@ -72,7 +72,7 @@ class MonolithPainter extends CustomPainter {
     canvas.drawPath(
       path,
       Paint()
-        ..color = Colors.black.withOpacity(0.5)
+        ..color = Colors.black.withValues(alpha: 0.5)
         ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 10)
         ..style = PaintingStyle.stroke
         ..strokeWidth = 2.0,
@@ -89,7 +89,7 @@ class MonolithPainter extends CustomPainter {
       Offset(activeX, h - 10),
       slitPaint
         ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8)
-        ..color = theme.accentColor.withOpacity(0.6),
+        ..color = theme.accentColor.withValues(alpha: 0.6),
     );
     // Sharp Slit
     canvas.drawLine(
@@ -102,7 +102,7 @@ class MonolithPainter extends CustomPainter {
 
     // 3. SURFACE TEXTURE (Subtle geometric lines)
     final geoPaint = Paint()
-      ..color = Colors.white.withOpacity(0.02)
+      ..color = Colors.white.withValues(alpha: 0.02)
       ..strokeWidth = 0.8;
 
     for (int i = 0; i < count; i++) {
@@ -117,7 +117,7 @@ class MonolithPainter extends CustomPainter {
         const Radius.circular(1),
       ),
       Paint()
-        ..color = theme.accentColor.withOpacity(0.15)
+        ..color = theme.accentColor.withValues(alpha: 0.15)
         ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4),
     );
 
@@ -127,7 +127,7 @@ class MonolithPainter extends CustomPainter {
       20,
       Paint()
         ..shader = ui.Gradient.radial(Offset(activeX, h / 2), 30, [
-          theme.accentColor.withOpacity(0.08),
+          theme.accentColor.withValues(alpha: 0.08),
           Colors.transparent,
         ])
         ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 10),

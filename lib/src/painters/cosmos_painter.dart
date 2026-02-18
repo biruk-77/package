@@ -41,11 +41,11 @@ class CosmosPainter extends CustomPainter {
           Offset(activeX, h / 2),
           flareRadius,
           [
-            (customColors['impactAccentColor'] ?? Colors.white).withOpacity(
-              (0.8 * (1.0 - pressValue)).clamp(0.0, 1.0),
+            (customColors['impactAccentColor'] ?? Colors.white).withValues(
+              alpha: (0.8 * (1.0 - pressValue)).clamp(0.0, 1.0),
             ),
-            (customColors['impactColor'] ?? theme.accentColor).withOpacity(
-              (0.4 * (1.0 - pressValue)).clamp(0.0, 1.0),
+            (customColors['impactColor'] ?? theme.accentColor).withValues(
+              alpha: (0.4 * (1.0 - pressValue)).clamp(0.0, 1.0),
             ),
             Colors.transparent,
           ],
@@ -87,8 +87,8 @@ class CosmosPainter extends CustomPainter {
           Offset(activeX, h / 2),
           itemWidth * 1.5,
           [
-            nebulaBase.withOpacity(0.12),
-            nebulaAccent.withOpacity(0.05),
+            nebulaBase.withValues(alpha: 0.12),
+            nebulaAccent.withValues(alpha: 0.05),
             Colors.transparent,
           ],
           [0.0, 0.6, 1.0],
@@ -118,7 +118,9 @@ class CosmosPainter extends CustomPainter {
         Offset(starX, starY),
         Offset(starX - 20, starY - 5),
         Paint()
-          ..color = (customColors['starColor'] ?? Colors.white).withOpacity(0.4)
+          ..color = (customColors['starColor'] ?? Colors.white).withValues(
+            alpha: 0.4,
+          )
           ..strokeWidth = 1.0,
       );
     }
@@ -131,7 +133,7 @@ class CosmosPainter extends CustomPainter {
         Offset(activeX, h / 2),
         20 * pulse,
         Paint()
-          ..color = coreColor.withOpacity(0.1)
+          ..color = coreColor.withValues(alpha: 0.1)
           ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 5),
       );
       canvas.drawCircle(
@@ -162,7 +164,7 @@ class CosmosPainter extends CustomPainter {
       canvas.drawCircle(
         Offset(x, y),
         starSize,
-        starPaint..color = color.withOpacity(opacity),
+        starPaint..color = color.withValues(alpha: opacity),
       );
     }
   }

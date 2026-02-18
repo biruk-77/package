@@ -43,7 +43,9 @@ class SumiPainter extends CustomPainter {
           Offset(activeX, h / 2),
           splashRadius,
           [
-            splashColor.withOpacity((0.4 * (1.0 - pressValue)).clamp(0.0, 1.0)),
+            splashColor.withValues(
+              alpha: (0.4 * (1.0 - pressValue)).clamp(0.0, 1.0),
+            ),
             Colors.transparent,
           ],
           [0.0, 1.0],
@@ -62,8 +64,8 @@ class SumiPainter extends CustomPainter {
           ),
           5 * (1.0 - pressValue),
           Paint()
-            ..color = splashColor.withOpacity(
-              (0.3 * (1.0 - pressValue)).clamp(0.0, 1.0),
+            ..color = splashColor.withValues(
+              alpha: (0.3 * (1.0 - pressValue)).clamp(0.0, 1.0),
             ),
         );
       }
@@ -82,7 +84,7 @@ class SumiPainter extends CustomPainter {
       );
 
       // Subtle grain
-      final grainPaint = Paint()..color = Colors.black.withOpacity(0.02);
+      final grainPaint = Paint()..color = Colors.black.withValues(alpha: 0.02);
       for (int i = 0; i < 100; i++) {
         final double rx = math.Random(i).nextDouble() * w;
         final double ry = math.Random(i + 1).nextDouble() * h;
@@ -96,7 +98,7 @@ class SumiPainter extends CustomPainter {
       ..shader = ui.Gradient.radial(
         Offset(activeX, h / 2),
         itemWidth * 1.5,
-        [inkColor.withOpacity(0.15), inkColor.withOpacity(0.0)],
+        [inkColor.withValues(alpha: 0.15), inkColor.withValues(alpha: 0.0)],
         [0.0, 1.0],
       )
       ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 20);
@@ -114,7 +116,7 @@ class SumiPainter extends CustomPainter {
 
     // 4. CALLIGRAPHIC STROKE (The indicator line)
     final strokePaint = Paint()
-      ..color = inkColor.withOpacity(0.9)
+      ..color = inkColor.withValues(alpha: 0.9)
       ..strokeWidth = 3.0
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
@@ -137,12 +139,12 @@ class SumiPainter extends CustomPainter {
         Rect.fromCenter(center: Offset(sealX, sealY), width: 15, height: 15),
         Paint()
           ..color = (customColors['sealColor'] ?? const Color(0xFFB22222))
-              .withOpacity(0.8),
+              .withValues(alpha: 0.8),
       );
       canvas.drawCircle(
         Offset(sealX, sealY),
         3,
-        Paint()..color = Colors.white.withOpacity(0.3),
+        Paint()..color = Colors.white.withValues(alpha: 0.3),
       );
     }
   }
@@ -154,7 +156,7 @@ class SumiPainter extends CustomPainter {
     Color color = const Color(0xFF000000),
   }) {
     final inkPaint = Paint()
-      ..color = color.withOpacity(0.7)
+      ..color = color.withValues(alpha: 0.7)
       ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 5);
 
     final path = Path();
@@ -164,10 +166,11 @@ class SumiPainter extends CustomPainter {
       final double r = radius * (0.8 + 0.4 * math.sin(idleTime * 5 + i * 2));
       final double x = center.dx + math.cos(angle) * r;
       final double y = center.dy + math.sin(angle) * r;
-      if (i == 0)
+      if (i == 0) {
         path.moveTo(x, y);
-      else
+      } else {
         path.lineTo(x, y);
+      }
     }
     path.close();
     canvas.drawPath(path, inkPaint);

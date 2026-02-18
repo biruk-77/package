@@ -36,8 +36,8 @@ class ChronosPainter extends CustomPainter {
     // MECHANICAL FLARE ON IMPACT
     if (pressValue > 0.01) {
       final flarePaint = Paint()
-        ..color = theme.accentColor.withOpacity(
-          (0.3 * (1.0 - pressValue)).clamp(0.0, 1.0),
+        ..color = theme.accentColor.withValues(
+          alpha: (0.3 * (1.0 - pressValue)).clamp(0.0, 1.0),
         )
         ..style = PaintingStyle.stroke
         ..strokeWidth = 1.0;
@@ -73,7 +73,7 @@ class ChronosPainter extends CustomPainter {
 
     // 2. PRECISION TICK MARKS (The "Ticking" Animation)
     final tickPaint = Paint()
-      ..color = Colors.white.withOpacity(0.1)
+      ..color = Colors.white.withValues(alpha: 0.1)
       ..strokeWidth = 1.0;
 
     for (double x = 0; x < w; x += 10) {
@@ -97,14 +97,14 @@ class ChronosPainter extends CustomPainter {
     canvas.drawCircle(
       center,
       22,
-      activePaint..color = theme.accentColor.withOpacity(0.3),
+      activePaint..color = theme.accentColor.withValues(alpha: 0.3),
     );
     canvas.drawCircle(
       center,
       24,
       activePaint
         ..strokeWidth = 1.0
-        ..color = theme.accentColor.withOpacity(0.5),
+        ..color = theme.accentColor.withValues(alpha: 0.5),
     );
 
     // Dial Hand (Small ticking needle)
@@ -122,14 +122,14 @@ class ChronosPainter extends CustomPainter {
     );
 
     // 5. MEASUREMENT COORDINATES (Small technical text simulated)
-    final textPaint = Paint()..color = Colors.white.withOpacity(0.2);
+    final textPaint = Paint()..color = Colors.white.withValues(alpha: 0.2);
     canvas.drawCircle(Offset(activeX - 25, h - 8), 1, textPaint);
     canvas.drawCircle(Offset(activeX + 25, h - 8), 1, textPaint);
   }
 
   void _drawGears(Canvas canvas, Size size, double activeX) {
     final gearPaint = Paint()
-      ..color = Colors.white.withOpacity(0.03)
+      ..color = Colors.white.withValues(alpha: 0.03)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2.0;
 

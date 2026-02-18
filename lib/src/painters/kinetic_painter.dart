@@ -43,7 +43,7 @@ class KineticPainter extends CustomPainter {
           ..style = PaintingStyle.stroke
           ..strokeWidth = 3.0 * (1.0 - pressValue)
           ..color = (customColors['impactColor'] ?? theme.accentColor)
-              .withOpacity((0.3 * (1.0 - pressValue)).clamp(0.0, 1.0))
+              .withValues(alpha: (0.3 * (1.0 - pressValue)).clamp(0.0, 1.0))
           ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8),
       );
     }
@@ -106,7 +106,7 @@ class KineticPainter extends CustomPainter {
 
           tilePaint.color = Color.lerp(
             baseTileColor,
-            activeTileColor.withOpacity(0.8),
+            activeTileColor.withValues(alpha: 0.8),
             proximity.clamp(0.0, 1.0),
           )!;
 
@@ -134,8 +134,8 @@ class KineticPainter extends CustomPainter {
             canvas.drawRect(
               Rect.fromLTWH(-tileSize / 2, -tileSize / 2, tileSize, 1),
               Paint()
-                ..color = Colors.white.withOpacity(
-                  0.3 * math.max(proximity, pressValue),
+                ..color = Colors.white.withValues(
+                  alpha: 0.3 * math.max(proximity, pressValue),
                 ),
             );
           }
@@ -148,7 +148,7 @@ class KineticPainter extends CustomPainter {
     if (effectToggles['showConduit'] ?? true) {
       final conduitPaint = Paint()
         ..color = (customColors['conduitColor'] ?? theme.accentColor)
-            .withOpacity(0.3)
+            .withValues(alpha: 0.3)
         ..strokeWidth = 1.0
         ..style = PaintingStyle.stroke;
 
@@ -162,8 +162,8 @@ class KineticPainter extends CustomPainter {
             Offset(activeX, h / 2),
             30,
             [
-              (customColors['conduitColor'] ?? theme.accentColor).withOpacity(
-                0.2,
+              (customColors['conduitColor'] ?? theme.accentColor).withValues(
+                alpha: 0.2,
               ),
               Colors.transparent,
             ],

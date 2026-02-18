@@ -30,8 +30,8 @@ class BackgroundGlowPainter extends CustomPainter {
     final gradient =
         RadialGradient(
           colors: [
-            theme.accentColor.withOpacity(0.25 + 0.1 * pulse),
-            theme.glowGradient.colors[1].withOpacity(0.1),
+            theme.accentColor.withValues(alpha: 0.25 + 0.1 * pulse),
+            theme.glowGradient.colors[1].withValues(alpha: 0.1),
             Colors.transparent,
           ],
           stops: const [0.0, 0.5, 1.0],
@@ -58,14 +58,16 @@ class BackgroundGlowPainter extends CustomPainter {
         Offset(offset, 0),
         glowRadius * 0.5,
         Paint()
-          ..color = theme.glowGradient.colors[i % 2].withOpacity(opacity)
+          ..color = theme.glowGradient.colors[i % 2].withValues(alpha: opacity)
           ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 20),
       );
       canvas.drawCircle(
         Offset(-offset, 0),
         glowRadius * 0.5,
         Paint()
-          ..color = theme.glowGradient.colors[(i + 1) % 2].withOpacity(opacity)
+          ..color = theme.glowGradient.colors[(i + 1) % 2].withValues(
+            alpha: opacity,
+          )
           ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 20),
       );
     }

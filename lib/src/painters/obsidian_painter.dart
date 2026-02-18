@@ -41,7 +41,7 @@ class ObsidianPainter extends CustomPainter {
         ),
         Paint()
           ..color = (customColors['impactColor'] ?? theme.accentColor)
-              .withOpacity((0.2 * (1.0 - pressValue)).clamp(0.0, 1.0))
+              .withValues(alpha: (0.2 * (1.0 - pressValue)).clamp(0.0, 1.0))
           ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 20),
       );
     }
@@ -70,7 +70,9 @@ class ObsidianPainter extends CustomPainter {
     // 2. MICRO-GRID TEXTURE
     if (effectToggles['showGrid'] ?? true) {
       final Paint gridPaint = Paint()
-        ..color = (customColors['gridColor'] ?? Colors.white).withOpacity(0.02)
+        ..color = (customColors['gridColor'] ?? Colors.white).withValues(
+          alpha: 0.02,
+        )
         ..style = PaintingStyle.stroke
         ..strokeWidth = 0.5;
 
@@ -84,8 +86,8 @@ class ObsidianPainter extends CustomPainter {
       final Offset center = Offset(activeX, h / 2);
       final Paint beamPaint = Paint()
         ..shader = ui.Gradient.radial(center, h * 1.2, [
-          (customColors['glowColor'] ?? theme.accentColor).withOpacity(
-            0.15 * glowStrength,
+          (customColors['glowColor'] ?? theme.accentColor).withValues(
+            alpha: 0.15 * glowStrength,
           ),
           Colors.transparent,
         ])
@@ -106,8 +108,9 @@ class ObsidianPainter extends CustomPainter {
       canvas.drawRRect(
         podRect,
         Paint()
-          ..color = (customColors['podShadowColor'] ?? Colors.black)
-              .withOpacity(0.8)
+          ..color = (customColors['podShadowColor'] ?? Colors.black).withValues(
+            alpha: 0.8,
+          )
           ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8),
       );
 
@@ -117,14 +120,16 @@ class ObsidianPainter extends CustomPainter {
         Paint()
           ..style = PaintingStyle.stroke
           ..strokeWidth = 1.2
-          ..color = (customColors['podBorderColor'] ?? Colors.white)
-              .withOpacity(0.05),
+          ..color = (customColors['podBorderColor'] ?? Colors.white).withValues(
+            alpha: 0.05,
+          ),
       );
 
       // 5. TECHNICAL ACCENT
       final Paint accentPaint = Paint()
-        ..color = (customColors['accentColor'] ?? theme.accentColor)
-            .withOpacity(0.8)
+        ..color = (customColors['accentColor'] ?? theme.accentColor).withValues(
+          alpha: 0.8,
+        )
         ..strokeWidth = 2.0
         ..strokeCap = StrokeCap.round;
 

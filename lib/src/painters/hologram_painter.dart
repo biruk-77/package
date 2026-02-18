@@ -36,8 +36,8 @@ class HologramPainter extends CustomPainter {
     // DIGITAL GLITCH BURST ON IMPACT
     if (pressValue > 0.01) {
       final glitchPaint = Paint()
-        ..color = theme.accentColor.withOpacity(
-          (0.3 * (1.0 - pressValue)).clamp(0.0, 1.0),
+        ..color = theme.accentColor.withValues(
+          alpha: (0.3 * (1.0 - pressValue)).clamp(0.0, 1.0),
         );
       final random = math.Random((pressValue * 100).toInt());
 
@@ -60,8 +60,8 @@ class HologramPainter extends CustomPainter {
           const Radius.circular(20),
         ),
         Paint()
-          ..color = Colors.white.withOpacity(
-            (0.15 * (1.0 - pressValue)).clamp(0.0, 1.0),
+          ..color = Colors.white.withValues(
+            alpha: (0.15 * (1.0 - pressValue)).clamp(0.0, 1.0),
           ),
       );
     }
@@ -75,7 +75,7 @@ class HologramPainter extends CustomPainter {
     final double flicker = 0.95 + math.sin(idleTime * 20) * 0.05;
     canvas.drawRRect(
       barRect,
-      Paint()..color = theme.baseColor.withOpacity(0.1 * flicker),
+      Paint()..color = theme.baseColor.withValues(alpha: 0.1 * flicker),
     );
 
     // 2. IRIDESCENT SHIMMER
@@ -84,11 +84,11 @@ class HologramPainter extends CustomPainter {
         Offset(activeX - itemWidth, 0),
         Offset(activeX + itemWidth, h),
         [
-          Colors.cyan.withOpacity(0.0),
-          Colors.purpleAccent.withOpacity(0.2 * flicker),
-          Colors.cyan.withOpacity(0.3 * flicker),
-          Colors.greenAccent.withOpacity(0.2 * flicker),
-          Colors.cyan.withOpacity(0.0),
+          Colors.cyan.withValues(alpha: 0.0),
+          Colors.purpleAccent.withValues(alpha: 0.2 * flicker),
+          Colors.cyan.withValues(alpha: 0.3 * flicker),
+          Colors.greenAccent.withValues(alpha: 0.2 * flicker),
+          Colors.cyan.withValues(alpha: 0.0),
         ],
         [0.0, 0.3, 0.5, 0.7, 1.0],
       )
@@ -98,7 +98,7 @@ class HologramPainter extends CustomPainter {
 
     // 3. HORIZONTAL SCANLINES
     final scanlinePaint = Paint()
-      ..color = Colors.white.withOpacity(0.03)
+      ..color = Colors.white.withValues(alpha: 0.03)
       ..strokeWidth = 1.0;
 
     for (double y = 0; y < h; y += 4) {
@@ -120,20 +120,20 @@ class HologramPainter extends CustomPainter {
     canvas.drawRRect(
       podRect,
       Paint()
-        ..color = theme.accentColor.withOpacity(0.4)
+        ..color = theme.accentColor.withValues(alpha: 0.4)
         ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 12),
     );
 
     // Holographic Glitch lines
     final glitchPaint = Paint()
-      ..color = Colors.white.withOpacity(0.8)
+      ..color = Colors.white.withValues(alpha: 0.8)
       ..strokeWidth = 1.0;
 
     if (math.sin(idleTime * 15) > 0.8) {
       canvas.drawLine(
         Offset(activeX - 30, h / 2 - 5),
         Offset(activeX + 30, h / 2 - 5),
-        glitchPaint..color = Colors.cyan.withOpacity(0.5),
+        glitchPaint..color = Colors.cyan.withValues(alpha: 0.5),
       );
     }
 
@@ -147,7 +147,7 @@ class HologramPainter extends CustomPainter {
           Offset(activeX, h),
           [
             Colors.transparent,
-            theme.accentColor.withOpacity(0.3),
+            theme.accentColor.withValues(alpha: 0.3),
             Colors.transparent,
           ],
           [0.0, 0.5, 1.0],

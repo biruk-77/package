@@ -49,8 +49,8 @@ class FloatingPainter extends CustomPainter {
           const Radius.circular(20),
         ),
         Paint()
-          ..color = (customColors['shadowColor'] ?? Colors.black).withOpacity(
-            0.2,
+          ..color = (customColors['shadowColor'] ?? Colors.black).withValues(
+            alpha: 0.2,
           )
           ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 15),
       );
@@ -60,8 +60,8 @@ class FloatingPainter extends CustomPainter {
     canvas.drawRRect(
       podRect,
       Paint()
-        ..color = (customColors['baseColor'] ?? theme.baseColor).withOpacity(
-          0.9,
+        ..color = (customColors['baseColor'] ?? theme.baseColor).withValues(
+          alpha: 0.9,
         )
         ..style = PaintingStyle.fill,
     );
@@ -73,7 +73,9 @@ class FloatingPainter extends CustomPainter {
           Offset(activeX, h / 2 + floatY),
           itemWidth * 0.8,
           [
-            (customColors['glowColor'] ?? theme.accentColor).withOpacity(0.2),
+            (customColors['glowColor'] ?? theme.accentColor).withValues(
+              alpha: 0.2,
+            ),
             Colors.transparent,
           ],
         )
@@ -90,9 +92,15 @@ class FloatingPainter extends CustomPainter {
           Offset(0, floatY),
           Offset(w, h + floatY),
           [
-            (customColors['borderColor'] ?? Colors.white).withOpacity(0.3),
-            (customColors['borderColor'] ?? Colors.white).withOpacity(0.05),
-            (customColors['borderColor'] ?? Colors.white).withOpacity(0.3),
+            (customColors['borderColor'] ?? Colors.white).withValues(
+              alpha: 0.3,
+            ),
+            (customColors['borderColor'] ?? Colors.white).withValues(
+              alpha: 0.05,
+            ),
+            (customColors['borderColor'] ?? Colors.white).withValues(
+              alpha: 0.3,
+            ),
           ],
           [0.0, 0.5, 1.0],
         );
@@ -109,8 +117,9 @@ class FloatingPainter extends CustomPainter {
       canvas.drawRRect(
         RRect.fromRectAndRadius(indicatorRect, const Radius.circular(20)),
         Paint()
-          ..color = (customColors['indicatorColor'] ?? Colors.white)
-              .withOpacity(0.05)
+          ..color = (customColors['indicatorColor'] ?? Colors.white).withValues(
+            alpha: 0.05,
+          )
           ..style = PaintingStyle.fill,
       );
 
@@ -123,7 +132,7 @@ class FloatingPainter extends CustomPainter {
         Paint()
           ..color =
               (customColors['indicatorHighlightColor'] ?? theme.accentColor)
-                  .withOpacity(0.5),
+                  .withValues(alpha: 0.5),
       );
     }
   }

@@ -170,9 +170,9 @@ class LiquidMetalPainter extends CustomPainter {
       Paint()
         ..shader = LinearGradient(
           colors: [
-            baseColor.withOpacity(0.95),
-            backgroundColor.withOpacity(0.98),
-            baseColor.withOpacity(0.95),
+            baseColor.withValues(alpha: 0.95),
+            backgroundColor.withValues(alpha: 0.98),
+            baseColor.withValues(alpha: 0.95),
           ],
           stops: const [0.0, 0.5, 1.0],
           begin: Alignment.topLeft,
@@ -190,9 +190,9 @@ class LiquidMetalPainter extends CustomPainter {
             center: Alignment(((activeX / w) * 2) - 1.0, -0.3),
             radius: 0.6 + wringIntensity * 0.2,
             colors: [
-              glowColor.withOpacity(0.3 + wringIntensity * 0.2),
+              glowColor.withValues(alpha: 0.3 + wringIntensity * 0.2),
               (customColors['glowAccentColor'] ?? theme.glowGradient.colors[1])
-                  .withOpacity(0.1),
+                  .withValues(alpha: 0.1),
               Colors.transparent,
             ],
             stops: const [0.0, 0.5, 1.0],
@@ -211,12 +211,12 @@ class LiquidMetalPainter extends CustomPainter {
           ..shader = SweepGradient(
             center: Alignment(((activeX / w) * 2) - 1.0, 0.0),
             colors: [
-              Colors.white.withOpacity(0.1),
-              borderColor.withOpacity(0.6),
+              Colors.white.withValues(alpha: 0.1),
+              borderColor.withValues(alpha: 0.6),
               (customColors['borderAccentColor'] ??
                       theme.glowGradient.colors[1])
-                  .withOpacity(0.4),
-              Colors.white.withOpacity(0.1),
+                  .withValues(alpha: 0.4),
+              Colors.white.withValues(alpha: 0.1),
             ],
             stops: const [0.0, 0.3, 0.7, 1.0],
           ).createShader(rect)
@@ -230,7 +230,7 @@ class LiquidMetalPainter extends CustomPainter {
       path,
       Paint()
         ..shader = LinearGradient(
-          colors: [Colors.white.withOpacity(0.1), Colors.transparent],
+          colors: [Colors.white.withValues(alpha: 0.1), Colors.transparent],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ).createShader(rect)
@@ -246,7 +246,7 @@ class LiquidMetalPainter extends CustomPainter {
           end: Alignment.bottomRight,
           colors: [
             Colors.transparent,
-            (customColors['shineColor'] ?? Colors.white).withOpacity(0.2),
+            (customColors['shineColor'] ?? Colors.white).withValues(alpha: 0.2),
             Colors.transparent,
           ],
           stops: const [0.0, 0.5, 1.0],

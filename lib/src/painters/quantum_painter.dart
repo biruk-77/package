@@ -57,8 +57,8 @@ class QuantumPainter extends CustomPainter {
         Paint()
           ..shader = RadialGradient(
             colors: [
-              (customColors['auraColor'] ?? theme.accentColor).withOpacity(
-                0.12,
+              (customColors['auraColor'] ?? theme.accentColor).withValues(
+                alpha: 0.12,
               ),
               Colors.transparent,
             ],
@@ -128,10 +128,14 @@ class QuantumPainter extends CustomPainter {
       Paint()
         ..shader = LinearGradient(
           colors: [
-            (customColors['baseColor'] ?? theme.baseColor).withOpacity(0.96),
+            (customColors['baseColor'] ?? theme.baseColor).withValues(
+              alpha: 0.96,
+            ),
             (customColors['baseAccentColor'] ?? const Color(0xFF101020))
-                .withOpacity(0.9),
-            (customColors['baseColor'] ?? theme.baseColor).withOpacity(0.96),
+                .withValues(alpha: 0.9),
+            (customColors['baseColor'] ?? theme.baseColor).withValues(
+              alpha: 0.96,
+            ),
           ],
           stops: const [0.0, 0.5, 1.0],
           begin: Alignment.topLeft,
@@ -148,11 +152,15 @@ class QuantumPainter extends CustomPainter {
         ..shader = SweepGradient(
           center: Alignment(((activeX / w) * 2) - 1.0, 0.0),
           colors: [
-            Colors.white.withOpacity(0.02),
-            (customColors['accentColor'] ?? theme.accentColor).withOpacity(0.4),
+            Colors.white.withValues(alpha: 0.02),
+            (customColors['accentColor'] ?? theme.accentColor).withValues(
+              alpha: 0.4,
+            ),
             (customColors['secondaryAccentColor'] ?? const Color(0xFF7B26F7)),
-            (customColors['accentColor'] ?? theme.accentColor).withOpacity(0.4),
-            Colors.white.withOpacity(0.02),
+            (customColors['accentColor'] ?? theme.accentColor).withValues(
+              alpha: 0.4,
+            ),
+            Colors.white.withValues(alpha: 0.02),
           ],
           stops: const [0.0, 0.45, 0.5, 0.55, 1.0],
           transform: GradientRotation(idleTime * 0.4),
@@ -188,8 +196,8 @@ class QuantumPainter extends CustomPainter {
         Paint()
           ..shader = RadialGradient(
             colors: [
-              nucleusBase.withOpacity(0.18),
-              nucleusAccent.withOpacity(0.05),
+              nucleusBase.withValues(alpha: 0.18),
+              nucleusAccent.withValues(alpha: 0.05),
               Colors.transparent,
             ],
             stops: const [0.0, 0.5, 1.0],
@@ -229,7 +237,7 @@ class QuantumPainter extends CustomPainter {
           Radius.circular(14 + i * 2),
         ),
         paint
-          ..color = ghostColor.withOpacity(opacity)
+          ..color = ghostColor.withValues(alpha: opacity)
           ..maskFilter = MaskFilter.blur(BlurStyle.normal, 5.0 + i * 2),
       );
     }
@@ -243,7 +251,7 @@ class QuantumPainter extends CustomPainter {
           Offset(scanX, h / 2 + 20),
           Paint()
             ..color = (customColors['scanLineColor'] ?? Colors.white)
-                .withOpacity(0.1)
+                .withValues(alpha: 0.1)
             ..strokeWidth = 1.0,
         );
       }

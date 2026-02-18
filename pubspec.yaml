@@ -1,7 +1,18 @@
 name: nav_bar
-description: "A highly customizable, futuristic bottom navigation bar with particle effects and liquid animations."
+description: "The ultimate Google-style animated bottom navigation bar. A high-performance, physics-based nav bar with liquid, curved, convex, and cinematic animations. The most customizable alternative to google_nav_bar and persistent_bottom_nav_bar."
 version: 0.1.0
 homepage: https://github.com/biruk-77/package
+repository: https://github.com/biruk-77/package
+issue_tracker: https://github.com/biruk-77/package/issues
+topics:
+  - bottom-navigation-bar
+  - google-nav-bar
+  - animated-navigation
+  - custom-ui
+  - tabbar
+  - curved-navigation
+  - convex-bottom-bar
+  - flutter-widgets
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43

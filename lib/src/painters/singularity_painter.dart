@@ -43,7 +43,7 @@ class SingularityPainter extends CustomPainter {
           ..style = PaintingStyle.stroke
           ..strokeWidth = 2.0 * (1.0 - pressValue)
           ..color = (customColors['impactColor'] ?? theme.accentColor)
-              .withOpacity((0.4 * (1.0 - pressValue)).clamp(0.0, 1.0))
+              .withValues(alpha: (0.4 * (1.0 - pressValue)).clamp(0.0, 1.0))
           ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 10),
       );
     }
@@ -52,8 +52,8 @@ class SingularityPainter extends CustomPainter {
     if (effectToggles['showGrid'] ?? true) {
       final gridColor = customColors['gridColor'] ?? theme.accentColor;
       final gridPaint = Paint()
-        ..color = gridColor.withOpacity(
-          (0.08 + pressValue * 0.1).clamp(0.0, 1.0),
+        ..color = gridColor.withValues(
+          alpha: (0.08 + pressValue * 0.1).clamp(0.0, 1.0),
         )
         ..strokeWidth = 1.0
         ..style = PaintingStyle.stroke;
@@ -98,11 +98,11 @@ class SingularityPainter extends CustomPainter {
             SweepGradient(
               center: Alignment.center,
               colors: [
-                diskBaseColor.withOpacity(0.0),
-                diskBaseColor.withOpacity(0.6),
+                diskBaseColor.withValues(alpha: 0.0),
+                diskBaseColor.withValues(alpha: 0.6),
                 (customColors['diskAccentColor'] ?? Colors.purpleAccent)
-                    .withOpacity(0.4),
-                diskBaseColor.withOpacity(0.0),
+                    .withValues(alpha: 0.4),
+                diskBaseColor.withValues(alpha: 0.0),
               ],
               stops: const [0.0, 0.4, 0.6, 1.0],
               transform: GradientRotation(idleTime * 2),
@@ -131,7 +131,7 @@ class SingularityPainter extends CustomPainter {
         nucleusRadius + 1,
         Paint()
           ..color = (customColors['photonRingColor'] ?? Colors.white)
-              .withOpacity(0.8)
+              .withValues(alpha: 0.8)
           ..style = PaintingStyle.stroke
           ..strokeWidth = 1.0
           ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 2),
@@ -148,7 +148,7 @@ class SingularityPainter extends CustomPainter {
           ..shader = ui.Gradient.radial(
             Offset(activeX, h / 2),
             80,
-            [auraColor.withOpacity(0.1), Colors.transparent],
+            [auraColor.withValues(alpha: 0.1), Colors.transparent],
             [0.0, 1.0],
           )
           ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 20),

@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   center: Alignment.center,
                   radius: 1.5,
                   colors: [
-                    _currentTheme.accentColor.withOpacity(0.15),
+                    _currentTheme.accentColor.withValues(alpha: 0.15),
                     _currentTheme.backgroundColor,
                   ],
                 ),
@@ -126,7 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.05),
+                      color: Colors.white.withValues(alpha: 0.05),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: DropdownButton<NavBarStyle>(
@@ -185,7 +185,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(color: Colors.white),
                     ),
                     value: _showGlow,
-                    activeColor: _currentTheme.accentColor,
+                    activeThumbColor: _currentTheme.accentColor,
                     onChanged: (val) => setState(() => _showGlow = val),
                   ),
                   SwitchListTile(
@@ -194,7 +194,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(color: Colors.white),
                     ),
                     value: _showLiquid,
-                    activeColor: _currentTheme.accentColor,
+                    activeThumbColor: _currentTheme.accentColor,
                     onChanged: (val) => setState(() => _showLiquid = val),
                   ),
 
@@ -202,7 +202,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.05),
+                      color: Colors.white.withValues(alpha: 0.05),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: DropdownButton<IconAnimationType>(
@@ -303,7 +303,7 @@ class _MyHomePageState extends State<MyHomePage> {
         decoration: BoxDecoration(
           color: isSelected
               ? _currentTheme.accentColor
-              : Colors.white.withOpacity(0.05),
+              : Colors.white.withValues(alpha: 0.05),
           borderRadius: BorderRadius.circular(8),
         ),
         child: Text(
