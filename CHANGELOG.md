@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.1] - 2026-02-18
+
+### Optimized
+- **Ultimate SEO Dominance**: Reconfigured metadata and description for maximum search visibility.
+- **Competitor Benchmarking**: Added head-to-head comparison against major navigation packages.
+- **Metadata Fixes**: Reduced topics to top 5 high-impact keywords for pub.dev compatibility.
+
 ## [0.1.0] - 2026-02-16
 
 ### Added
